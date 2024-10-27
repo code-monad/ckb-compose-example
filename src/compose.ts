@@ -46,13 +46,13 @@ async function main() {
     // now generate delegate lock args from shadow cell
     const shadowLockHash = shadowLock.hash();
     console.log(`shadowLockHash: ${shadowLockHash}`);
-    const delegateToShadowLockArgs = `0x7${shadowLockHash.slice(2)}`;
+    const delegateToShadowLockArgs = `0x00${shadowLockHash.slice(2)}`;
     const delegateToShadowLock = ccc.Script.from({
         codeHash,
         args: delegateToShadowLockArgs,
         hashType: "data1",
     });
-    const bundleGearSporeID = "0x92ee4a93df1f62996fd91679ab1c146b50b7cdd9e2fd97d5752d830d61dbf537";
+    const bundleGearSporeID = "0x3d18bb7ed80f10e2a5c98a8e44697a79091e54c081d478d3ae7863e021d527ff";
     const makeBundleTx = await transferSpore(
         {
             signer,
